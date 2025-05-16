@@ -1,0 +1,8 @@
+streamlit
+pandas
+langchain-community
+langchain-mistralai
+langchain
+matplotlib
+plotly
+mistralai 
