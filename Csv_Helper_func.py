@@ -4,23 +4,16 @@ import re
 import pandas as pd
 import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader, CSVLoader
-from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_mistralai.chat_models import ChatMistralAI
+# from langchain_community.vectorstores import FAISS
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain_mistralai.chat_models import ChatMistralAI
 # from langchain_community.llms import Ollama  
-from langchain.chains import RetrievalQA
+# from langchain.chains import RetrievalQA
 import tempfile
 import os
 import matplotlib.pyplot as plt
 import plotly.express as px
-from mistralai import Mistral
-
-mistral_api_key = os.getenv("MISTRAL_API_KEY", "YOUR_MISTRAL_API_KEY")
-
-model = "mistral-large-latest"
-
-client = Mistral(api_key=mistral_api_key)
-
+# from mistralai import Mistral
 
 def process_csv(path):
     """
@@ -86,10 +79,7 @@ def parse_llm_csv_output(llm_output: str) -> pd.DataFrame:
     return pd.DataFrame()
 
 
-
-
-
-def clean_csv(df_path):
+def clean_csv(df_path, client, model="mistral-large-latest"):
     
     docs = process_csv(df_path)
 

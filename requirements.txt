@@ -6,3 +6,5 @@ langchain
 matplotlib
 plotly
 mistralai 
+faiss-cpu
+sentence-transformers
